@@ -31,7 +31,7 @@ public class RegistrationTest extends Utility {
     }
     @Test
     public void verifyUserShouldNavigateToRegisterPageSuccessfully(){
-        clickOnElement(By.xpath("//a[@class='ico-register']"));
+        clickonElement(By.xpath("//a[@class='ico-register']"));
         String expectedText = "Your Personal Details";
         String actualText = getTextFromElement(By.xpath("//strong[contains(text(),'Your Personal Details')]"));
         Assert.assertEquals(expectedText,actualText);
@@ -40,14 +40,14 @@ public class RegistrationTest extends Utility {
     }
     @Test
     public void verifyUserShouldRegisterSuccessfully(){
-        clickOnElement(By.xpath("//a[@class='ico-register']"));
-        clickOnElement(By.id("gender-female"));
+        clickonElement(By.xpath("//a[@class='ico-register']"));
+        mouseHoverToElementAndClick(By.xpath("//input[@id='gender-female']"));
         sendTextToElement(By.id("FirstName"),"LAMEERTHA");
         sendTextToElement(By.id("LastName"),"THEVARAJAH");
-        sendTextToElement(By.id("Email"),"abcdefgh@gmail.com");
-        sendTextToElement(By.id("Password"), "lamee123");
+        sendRandomEmailToNextField(By.id("Email"),"lamee58@gmail.com");
+        sendRandomPasswordToNextField(By.id("Password"), "lamee123");
         sendTextToElement(By.id("ConfirmPassword"),"lamee123");
-        clickOnElement(By.id("register-button"));
+        clickonElement(By.id("register-button"));
         String expectedText= "Your registration completed";
         String actualText = getTextFromElement(By.xpath("//div[@class='result']"));
         Assert.assertEquals(expectedText,actualText);

@@ -32,7 +32,7 @@ public class Books extends Utility {
     }
     @Test
     public void sortBooksByAtoZ(){
-        clickOnElement(By.xpath("//option[contains(text(),'Name: A to Z')]"));
+        clickonElement(By.xpath("//option[contains(text(),'Name: A to Z')]"));
         ArrayList<String> getList = new ArrayList<>();
         List<WebElement> elementList = driver.findElements(By.tagName("h2"));
         for (WebElement Links : elementList){
@@ -46,8 +46,8 @@ public class Books extends Utility {
     }
     @Test
     public void addProductToTheWishList(){
-        clickOnElement(By.xpath("//option[contains(text(),'Name: A to Z')]"));
-        clickOnElement(By.xpath("//div[@class='item-grid']//div[1]//div[1]//div[2]//div[3]//div[2]//input[3]"));
+        clickonElement(By.xpath("//option[contains(text(),'Name: A to Z')]"));
+        clickonElement(By.xpath("//div[@class='item-grid']//div[1]//div[1]//div[2]//div[3]//div[2]//input[3]"));
         String expectedResult = "The product has been added to your wishlist";
         String actualResult = getTextFromElement(By.xpath("//p[@class='content']"));
         Assert.assertEquals(expectedResult, actualResult);

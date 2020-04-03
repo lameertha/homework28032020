@@ -28,7 +28,7 @@ public class Electronics extends Utility {
     @Test
     public void mouseHoverOnElectronics(){
         mouseHoverToElement(By.linkText("Electronics"));
-        clickOnElement(By.linkText("Camera & photo"));
+        clickonElement(By.linkText("Camera & photo"));
         String expectedText = "Camera & photo";
         String actualText = getTextFromElement(By.xpath("//h1[contains(text(),'Camera & photo')]"));
         Assert.assertEquals(expectedText,actualText);
@@ -37,7 +37,7 @@ public class Electronics extends Utility {
     @Test
     public void verifySortByPositionIsLawToHigh(){
         mouseHoverToElement(By.linkText("Electronics"));
-        clickOnElement(By.linkText("Camera & photo"));
+        clickonElement(By.linkText("Camera & photo"));
         selectByVisibleTextFromDropDownMenu(By.xpath("//select[@id='products-orderby']"),"Price: Low to High");
     }
     @After

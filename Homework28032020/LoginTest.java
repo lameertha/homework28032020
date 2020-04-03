@@ -32,7 +32,7 @@ public class LoginTest extends Utility {
     }
     @Test
     public void userShouldNagigateToLoginPageSuccessfully() throws InterruptedException {
-        clickOnElement(By.xpath("//a[@class='ico-login']"));
+        clickonElement(By.xpath("//a[@class='ico-login']"));
         Thread.sleep(3000);
         String expectedText = "Welcome, Please Sign In!";
         String actualText = getTextFromElement(By.xpath("//h1[contains(text(),'Welcome, Please Sign In!')]"));
@@ -43,11 +43,11 @@ public class LoginTest extends Utility {
 
     @Test
     public void userShoulLoginSuccessfully() throws InterruptedException {
-        clickOnElement(By.xpath("//a[@class='ico-login']"));
+        clickonElement(By.xpath("//a[@class='ico-login']"));
         Thread.sleep(3000);
         sendTextToElement(By.xpath("//input[@id='Email']"),"lameethev2@gmail.com");
         sendTextToElement(By.id("Password"),"lamee123");
-        clickOnElement(By.xpath("//input[@class='button-1 login-button']"));
+        clickonElement(By.xpath("//input[@class='button-1 login-button']"));
         String expectedText = "Welcome to our store";
         String actualText = getTextFromElement(By.xpath("//h2[contains(text(),'Welcome to our store')]"));
         Assert.assertEquals(expectedText,actualText);
@@ -57,11 +57,11 @@ public class LoginTest extends Utility {
     }
     @Test
     public void userShouldnotLoginSuccessfully() throws InterruptedException{
-        clickOnElement(By.xpath("//a[@class='ico-login']"));
+        clickonElement(By.xpath("//a[@class='ico-login']"));
         Thread.sleep(3000);
         sendTextToElement(By.xpath("//input[@id='Email']"),"lameethev2@yahoo.com");
         sendTextToElement(By.id("Password"),"lamee1234");
-        clickOnElement(By.xpath("//input[@class='button-1 login-button']"));
+        clickonElement(By.xpath("//input[@class='button-1 login-button']"));
         String expectedText = "Login was unsuccessful. Please correct the errors and try again.\n" +
                 "No customer account found";
         String actualText = getTextFromElement(By.xpath("//div[@class='message-error validation-summary-errors']"));
